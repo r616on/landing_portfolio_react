@@ -1,11 +1,12 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import PageTitle from "./PageTitle";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-const NotFound = () => {
+import PageTitle from './PageTitle';
+
+function NotFound() {
   return (
     <>
-      <PageTitle title="404"></PageTitle>
+      <PageTitle title="404" />
       <div className="h-screen w-full flex flex-col justify-center items-center  bg-homeBg-dark bg-no-repeat bg-center bg-cover bg-fixed">
         <h1 className="text-7xl leading-none text-white font-extrabold md:text-8xl">
           404!
@@ -23,6 +24,6 @@ const NotFound = () => {
       </div>
     </>
   );
-};
+}
 
 export default NotFound;

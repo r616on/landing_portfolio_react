@@ -1,25 +1,29 @@
-import React from "react";
+/* eslint-disable react/no-array-index-key */
+import React from 'react';
 import {
   FaEnvelopeOpenText,
   FaMapMarkerAlt,
   FaMobileAlt,
   FaRegCalendarAlt,
-} from "react-icons/fa";
-import "slick-carousel/slick/slick-theme.css";
-import "slick-carousel/slick/slick.css";
-import aboutImage from "../../assets/images/about/about.jpg";
-import "../../Share/Style.css";
-import Footer from "../../Share/Footer";
-import UseData from "../../Hooks/UseData";
-import SliderCommon from "../../Share/SliderCommon";
-import AboutCard from "./AboutCard";
-import PageTitle from "../../Share/PageTitle";
+} from 'react-icons/fa';
 
-const About = () => {
+import 'slick-carousel/slick/slick-theme.css';
+import 'slick-carousel/slick/slick.css';
+import aboutImage from '../../assets/images/about/about.jpg';
+import '../../Share/Style.css';
+import Footer from '../../Share/Footer';
+import UseData from '../../Hooks/UseData';
+import SliderCommon from '../../Share/SliderCommon';
+
+import PageTitle from '../../Share/PageTitle';
+
+import AboutCard from './AboutCard';
+
+function About() {
   const { local, serviceArray } = UseData();
   return (
     <>
-      <PageTitle title="About"></PageTitle>
+      <PageTitle title="About" />
       {/* End pagetitle */}
 
       <section>
@@ -46,7 +50,7 @@ const About = () => {
                       Who am i?
                     </h3>
                     <p className="text-gray-lite  dark:text-color-910 leading-7">
-                      I'm Creative Director and UI/UX Designer from Sydney,
+                      Im Creative Director and UI/UX Designer from Sydney,
                       Australia, working in web development and print media. I
                       enjoy turning complex problems into simple, beautiful and
                       intuitive designs.
@@ -152,12 +156,12 @@ const About = () => {
             </div>
 
             {/* Common Footer call here */}
-            <Footer condition={false} bg={"#FFFF"} />
+            <Footer condition={false} bg="#FFFF" />
           </div>
         </div>
       </section>
     </>
   );
-};
+}
 
 export default About;

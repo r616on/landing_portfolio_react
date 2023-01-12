@@ -1,23 +1,30 @@
-import { useState } from "react";
-import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
-import { FiMoon, FiSun } from "react-icons/fi";
-import { Link, Outlet, useLocation } from "react-router-dom";
-import UseData from "../../Hooks/UseData";
-import logo from "../../assets/images/logo/logo.png";
-import HeaderTwo from "../../Share/HeaderTwo";
-import HomeCard from "../../Share/HomeCard";
-import PageTitle from "../../Share/PageTitle";
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable react/react-in-jsx-scope */
+import { useState } from 'react';
+import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
+import { FiMoon, FiSun } from 'react-icons/fi';
+import { Link, Outlet, useLocation } from 'react-router-dom';
 
-const HomeTwo = () => {
+import UseData from '../../Hooks/UseData';
+import logo from '../../assets/images/logo/logo.png';
+import HeaderTwo from '../../Share/HeaderTwo';
+import HomeCard from '../../Share/HomeCard';
+import PageTitle from '../../Share/PageTitle';
+
+function HomeTwo() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const { handleTheme, check, menuItemTwo, NavLink } = UseData();
+  const {
+    handleTheme, check, menuItemTwo, NavLink,
+  } = UseData();
   const handle = (e) => {
     handleTheme(e);
   };
   const a = useLocation();
   return (
     <>
-      <PageTitle title="Home"></PageTitle>
+      <PageTitle title="Home" />
       {/* End pagetitle */}
 
       <section className="bg-homeBg dark:bg-homeTwoBg-dark min-h-screen  bg-no-repeat bg-center bg-cover bg-fixed  md:pb-16 w-full">
@@ -36,14 +43,14 @@ const HomeTwo = () => {
 
               {!check ? (
                 <span
-                  onClick={() => handle("dark")}
+                  onClick={() => handle('dark')}
                   className="bg-white w-[40px] h-[40px] lg:w-[50px] lg:h-[50px] rounded-full flex justify-center items-center hover:bg-[#ef4060] text-black hover:text-white transition-all duration-300 ease-in-out cursor-pointer  "
                 >
                   <FiMoon className=" text-3xl " />
                 </span>
               ) : (
                 <span
-                  onClick={() => handle("light")}
+                  onClick={() => handle('light')}
                   className="bg-[#4D4D4D] w-[40px] h-[40px] lg:w-[50px] lg:h-[50px] rounded-full flex justify-center items-center hover:bg-[#ef4060] transition-all duration-300 ease-in-out cursor-pointer  "
                 >
                   <FiSun className="text-white text-3xl" />
@@ -70,13 +77,13 @@ const HomeTwo = () => {
             </div>
           </div>
         </div>
-        <nav className={`${menuOpen ? "block lg:hidden" : "hidden"}`}>
+        <nav className={`${menuOpen ? 'block lg:hidden' : 'hidden'}`}>
           {/* mobile menu items */}
           <ul
             className={`${
               menuOpen
-                ? "block  rounded-b-[20px] shadow-md absolute left-0 top-20 z-[22222222222222] w-full bg-white dark:bg-[#1d1d1d]"
-                : "flex my-12 "
+                ? 'block  rounded-b-[20px] shadow-md absolute left-0 top-20 z-[22222222222222] w-full bg-white dark:bg-[#1d1d1d]'
+                : 'flex my-12 '
             }`}
           >
             {menuItemTwo.map((item) => (
@@ -86,15 +93,15 @@ const HomeTwo = () => {
                   activeClassName=" text-[#FA5252]  hover:text-[#FA5252] "
                   inactiveClassName=" dark:text-white dark:hover:text-[#FA5252]  hover:text-[#FA5252]  "
                   className={`${
-                    menuOpen ? " pl-4" : " mx-2.5 rounded-md "
+                    menuOpen ? ' pl-4' : ' mx-2.5 rounded-md '
                   }    cursor-pointer  transition-colors duration-300 ease-in-out  font-poppins   text-gray-lite font-medium   flex text-xtiny py-2.5 md:px-4 xl:px-5 items-center  ${
-                    a.pathname === "/homeTwo" && item.id === "01"
-                      ? " dark:text-[#FA5252] text-[#FA5252]   "
-                      : ""
+                    a.pathname === '/homeTwo' && item.id === '01'
+                      ? ' dark:text-[#FA5252] text-[#FA5252]   '
+                      : ''
                   }`}
                   to={item?.link}
                 >
-                  <span className="mr-2 text-xl">{item?.icon}</span>{" "}
+                  <span className="mr-2 text-xl">{item?.icon}</span>{' '}
                   {item?.name}
                 </NavLink>
               </li>
@@ -104,14 +111,14 @@ const HomeTwo = () => {
 
             {!check ? (
               <span
-                onClick={() => handle("dark")}
+                onClick={() => handle('dark')}
                 className="bg-white text-black hover:text-white w-[40px] hidden  h-[40px] rounded-full lg:flex justify-center items-center  hover:bg-[#ef4060] transition-all duration-300 ease-in-out cursor-pointer "
               >
                 <FiMoon className=" text-3xl " />
               </span>
             ) : (
               <span
-                onClick={() => handle("light")}
+                onClick={() => handle('light')}
                 className="bg-black w-[40px] h-[40px] hidden  rounded-full lg:flex justify-center items-center   hover:bg-[#ef4060] transition-all duration-300 ease-in-out cursor-pointer "
               >
                 <FiSun className="text-white text-3xl" />
@@ -134,6 +141,6 @@ const HomeTwo = () => {
       </section>
     </>
   );
-};
+}
 
 export default HomeTwo;

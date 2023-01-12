@@ -1,13 +1,19 @@
-import React, { useState } from "react";
-import { FiSun, FiMoon } from "react-icons/fi";
-import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
-import { Link, Outlet, useLocation } from "react-router-dom";
-import UseData from "../Hooks/UseData";
-import logo from "../assets/images/logo/logo.png";
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+import React, { useState } from 'react';
+import { FiSun, FiMoon } from 'react-icons/fi';
+import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
+import { Link, Outlet, useLocation } from 'react-router-dom';
 
-const Header = () => {
+import UseData from '../Hooks/UseData';
+import logo from '../assets/images/logo/logo.png';
+
+function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const { handleTheme, check, menuItem, NavLink } = UseData();
+  const {
+    handleTheme, check, menuItem, NavLink,
+  } = UseData();
   const handle = (e) => {
     handleTheme(e);
   };
@@ -30,14 +36,14 @@ const Header = () => {
 
                 {!check ? (
                   <span
-                    onClick={() => handle("dark")}
+                    onClick={() => handle('dark')}
                     className="bg-white w-[40px]  opacity-100 visible flex lg:opacity-0 lg:hidden  h-[40px]  rounded-full  justify-center items-center hover:bg-[#ef4060] text-black hover:text-white transition-all duration-300 ease-in-out cursor-pointer  ml-4"
                   >
                     <FiMoon className="  text-3xl" />
                   </span>
                 ) : (
                   <span
-                    onClick={() => handle("light")}
+                    onClick={() => handle('light')}
                     className="bg-[#4D4D4D] w-[40px] h-[40px] rounded-full  opacity-100 visible flex lg:opacity-0 lg:hidden justify-center items-center hover:bg-[#ef4060] transition-all duration-300 ease-in-out cursor-pointer  ml-4"
                   >
                     <FiSun className="text-white text-3xl" />
@@ -66,7 +72,7 @@ const Header = () => {
           </div>
           <nav
             className={`${
-              menuOpen ? "block  dark:bg-black   " : "hidden lg:block"
+              menuOpen ? 'block  dark:bg-black   ' : 'hidden lg:block'
             }`}
           >
             {/* Menu items start  */}
@@ -74,8 +80,8 @@ const Header = () => {
             <ul
               className={`${
                 menuOpen
-                  ? "block lg:hidden  absolute left-0 rounded-b-[20px] top-20 z-[22222222222222] w-full bg-white dark:bg-[#1D1D1D] drop-shadow-lg py-4 "
-                  : "flex my-12 "
+                  ? 'block lg:hidden  absolute left-0 rounded-b-[20px] top-20 z-[22222222222222] w-full bg-white dark:bg-[#1D1D1D] drop-shadow-lg py-4 '
+                  : 'flex my-12 '
               }`}
             >
               {menuItem.map((item) => (
@@ -88,26 +94,26 @@ const Header = () => {
                     key={item.id}
                     activeClassName={`${
                       menuOpen
-                        ? " text-[#FA5252] dark:text-[#FA5252] "
-                        : " text-white  dark:text-white bg-gradient-to-r from-[#FA5252] to-[#DD2476] "
+                        ? ' text-[#FA5252] dark:text-[#FA5252] '
+                        : ' text-white  dark:text-white bg-gradient-to-r from-[#FA5252] to-[#DD2476] '
                     }`}
                     inactiveClassName={`${
                       menuOpen
-                        ? " dark:hover:text-[#FA5252]"
-                        : "  dark:hover:text-white dark:bg-[#212425] hover:text-white   hover:bg-gradient-to-r from-[#FA5252] to-[#DD2476] dark:text-[#A6A6A6] "
+                        ? ' dark:hover:text-[#FA5252]'
+                        : '  dark:hover:text-white dark:bg-[#212425] hover:text-white   hover:bg-gradient-to-r from-[#FA5252] to-[#DD2476] dark:text-[#A6A6A6] '
                     }  transition-all duration-300 ease-in-out `}
                     className={`${
-                      a.pathname === "/home" && item.id === "01"
-                        ? "text-white linked dark:text-white bg-gradient-to-r from-[#FA5252] to-[#DD2476] "
-                        : " "
+                      a.pathname === '/home' && item.id === '01'
+                        ? 'text-white linked dark:text-white bg-gradient-to-r from-[#FA5252] to-[#DD2476] '
+                        : ' '
                     } ${
                       menuOpen
-                        ? " pl-4 dark:text-white    hover:text-[#FA5252] dark:hover:text-[#FA5252]  "
-                        : " rounded-md  cursor-pointer    font-poppins  bg-white text-gray-lite  "
+                        ? ' pl-4 dark:text-white    hover:text-[#FA5252] dark:hover:text-[#FA5252]  '
+                        : ' rounded-md  cursor-pointer    font-poppins  bg-white text-gray-lite  '
                     }  font-medium mx-2.5 flex text-xtiny py-2.5 md:px-4 xl:px-5 items-center  transition-all duration-300 ease-in-out `}
                     to={item?.link}
                   >
-                    <span className="mr-2 text-xl">{item?.icon}</span>{" "}
+                    <span className="mr-2 text-xl">{item?.icon}</span>{' '}
                     {item?.name}
                   </NavLink>
                 </li>
@@ -117,14 +123,14 @@ const Header = () => {
 
               {!check ? (
                 <span
-                  onClick={() => handle("dark")}
+                  onClick={() => handle('dark')}
                   className="bg-white w-[40px] hover:text-white hidden  h-[40px] rounded-full lg:flex justify-center items-center text-black hover:bg-[#ef4060] transition-all duration-300 ease-in-out cursor-pointer ml-2 "
                 >
                   <FiMoon className="  text-3xl" />
                 </span>
               ) : (
                 <span
-                  onClick={() => handle("light")}
+                  onClick={() => handle('light')}
                   className="bg-[#4D4D4D] w-[40px] h-[40px] hidden  rounded-full lg:flex justify-center items-center   hover:bg-[#ef4060] transition-all duration-300 ease-in-out cursor-pointer ml-2"
                 >
                   <FiSun className="text-white text-3xl" />
@@ -138,10 +144,10 @@ const Header = () => {
 
         {/* Header menu End  */}
 
-        {<Outlet />}
+        <Outlet />
       </div>
     </div>
   );
-};
+}
 
 export default Header;

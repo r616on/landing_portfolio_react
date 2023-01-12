@@ -1,5 +1,5 @@
-import React from "react";
-import cvFile from "../assets/images/cv.webp";
+import React from 'react';
+
 import {
   FaCalendarAlt,
   FaDribbble,
@@ -9,11 +9,13 @@ import {
   FaMapMarkerAlt,
   FaMobileAlt,
   FaTwitter,
-} from "react-icons/fa";
-import img from "../assets/images/about/avatar.jpg";
-import downloadIcon from "../assets/images/download.png";
+} from 'react-icons/fa';
 
-const HomeCard = () => {
+import cvFile from '../assets/images/cv.webp';
+import img from '../assets/images/about/avatar.jpg';
+import downloadIcon from '../assets/images/download.png';
+
+function HomeCard() {
   return (
     <div>
       <div className="w-full mb-6 lg:mb-0  mx-auto   relative bg-white text-center dark:bg-[#111111] px-6 rounded-[20px] mt-[180px] md:mt-[220px] lg:mt-0 ">
@@ -87,7 +89,7 @@ const HomeCard = () => {
                   Phone
                 </p>
                 <p className="dark:text-white break-all">
-                  {" "}
+                  {' '}
                   <a
                     className="hover:text-[#FA5252] duration-300 transition"
                     href="tel:+1234567890"
@@ -107,7 +109,7 @@ const HomeCard = () => {
                   Email
                 </p>
                 <p className="dark:text-white break-all">
-                  {" "}
+                  {' '}
                   <a
                     className="hover:text-[#FA5252] duration-300 transition"
                     href="mailto:ibthemes21@gmail.com"
@@ -155,6 +157,6 @@ const HomeCard = () => {
       </div>
     </div>
   );
-};
+}
 
 export default HomeCard;

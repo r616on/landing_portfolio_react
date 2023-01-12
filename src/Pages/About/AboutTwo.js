@@ -1,18 +1,21 @@
-import React from "react";
-import UseData from "../../Hooks/UseData";
-import Footer from "../../Share/Footer";
-import "../../Share/Style.css";
-import SliderCommon from "../../Share/SliderCommon";
-import AboutCard from "./AboutCard";
-import HomeCard from "../../Share/HomeCard";
-import PageTitle from "../../Share/PageTitle";
+import React from 'react';
 
-const AboutTwo = () => {
+import UseData from '../../Hooks/UseData';
+import Footer from '../../Share/Footer';
+import '../../Share/Style.css';
+import SliderCommon from '../../Share/SliderCommon';
+
+import HomeCard from '../../Share/HomeCard';
+import PageTitle from '../../Share/PageTitle';
+
+import AboutCard from './AboutCard';
+
+function AboutTwo() {
   const { local, serviceArray } = UseData();
 
   return (
     <section>
-      <PageTitle title="About"></PageTitle>
+      <PageTitle title="About" />
       {/* End pagetitle */}
 
       <div className=" lg:rounded-2xl bg-white dark:bg-[#111111]">
@@ -30,7 +33,7 @@ const AboutTwo = () => {
                 <div className="col-span-12 space-y-2.5">
                   <div className="lg:mr-16">
                     <p className="text-gray-lite  dark:text-color-910 leading-7">
-                      I'm Creative Director and UI/UX Designer from Sydney,
+                      Im Creative Director and UI/UX Designer from Sydney,
                       Australia, working in web development and print media. I
                       enjoy turning complex problems into simple, beautiful and
                       intuitive designs.
@@ -48,7 +51,7 @@ const AboutTwo = () => {
               <div className="col-span-12 space-y-2.5">
                 <div className="lg:mr-16">
                   <p className="text-gray-lite  dark:text-color-910 leading-7">
-                    I'm Creative Director and UI/UX Designer from Sydney,
+                    Im Creative Director and UI/UX Designer from Sydney,
                     Australia, working in web development and print media. I
                     enjoy turning complex problems into simple, beautiful and
                     intuitive designs.
@@ -84,11 +87,11 @@ const AboutTwo = () => {
           </div>
 
           {/* Common Footer call here */}
-          <Footer bg={"#FFFF"} />
+          <Footer bg="#FFFF" />
         </div>
       </div>
     </section>
   );
-};
+}
 
 export default AboutTwo;

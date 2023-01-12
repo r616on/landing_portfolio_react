@@ -1,19 +1,21 @@
-import React from "react";
-import userImage from "../../assets/images/about/avatar.jpg";
-import downloadIcon from "../../assets/images/download.png";
-import cvFile from "../../assets/images/cv.webp";
+import React from 'react';
+
 import {
   FaFacebookF,
   FaTwitter,
   FaDribbble,
   FaLinkedinIn,
-} from "react-icons/fa";
-import PageTitle from "../../Share/PageTitle";
+} from 'react-icons/fa';
 
-const HomePage = () => {
+import userImage from '../../assets/images/about/avatar.jpg';
+import downloadIcon from '../../assets/images/download.png';
+import cvFile from '../../assets/images/cv.webp';
+import PageTitle from '../../Share/PageTitle';
+
+function HomePage() {
   return (
     <>
-      <PageTitle title="Home"></PageTitle>
+      <PageTitle title="Home" />
       {/* End pagetitle */}
 
       <div
@@ -86,6 +88,6 @@ const HomePage = () => {
       </div>
     </>
   );
-};
+}
 
 export default HomePage;

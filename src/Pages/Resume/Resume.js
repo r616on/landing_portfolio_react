@@ -1,23 +1,27 @@
-import React from "react";
-import UseData from "../../Hooks/UseData";
-import Footer from "../../Share/Footer";
-import PageTitle from "../../Share/PageTitle";
-import LineItem from "./LineItem";
-import ResumeCard from "./ResumeCard";
+/* eslint-disable react/no-array-index-key */
+/* eslint-disable react/button-has-type */
+import React from 'react';
 
-const Resume = () => {
+import UseData from '../../Hooks/UseData';
+import Footer from '../../Share/Footer';
+import PageTitle from '../../Share/PageTitle';
+
+import LineItem from './LineItem';
+import ResumeCard from './ResumeCard';
+
+function Resume() {
   const { lineArray } = UseData();
 
   return (
     <>
-      <PageTitle title="Resume"></PageTitle>
+      <PageTitle title="Resume" />
       {/* End pagetitle */}
 
       <section className="bg-white  lg:rounded-2xl dark:bg-[#111111]">
         <div data-aos="fade">
           <div className="container  sm:px-5 md:px-10 lg:px-20">
             <div className="py-12 px-4">
-              {/*page title here */}
+              {/* page title here */}
               <h2 className="after-effect after:left-44 mb-[40px] mt-12 lg:mt-0">
                 Resume
               </h2>
@@ -67,11 +71,11 @@ const Resume = () => {
           {/* End Skills */}
 
           {/* call footer */}
-          <Footer condition={false} bg={"#FFFF"} />
+          <Footer condition={false} bg="#FFFF" />
         </div>
       </section>
     </>
   );
-};
+}
 
 export default Resume;

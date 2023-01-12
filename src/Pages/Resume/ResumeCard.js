@@ -1,9 +1,10 @@
-import React from "react";
-import { MdOutlineBusinessCenter, MdOutlineSchool } from "react-icons/md";
-import { FaAward } from "react-icons/fa";
-import UseData from "../../Hooks/UseData";
+import React from 'react';
+import { MdOutlineBusinessCenter, MdOutlineSchool } from 'react-icons/md';
+import { FaAward } from 'react-icons/fa';
 
-const ResumeCard = () => {
+import UseData from '../../Hooks/UseData';
+
+function ResumeCard() {
   const { educationArray, experiencesArray, awardsArray } = UseData();
   const { local } = UseData();
 
@@ -22,7 +23,7 @@ const ResumeCard = () => {
           <div
             className="py-4 pl-5 pr-3 space-y-2 mb-6 rounded-lg  dark:border-[#212425] dark:border-2"
             style={{
-              background: `${local === "dark" ? "transparent" : item?.bg}`,
+              background: `${local === 'dark' ? 'transparent' : item?.bg}`,
             }}
             key={item.id}
           >
@@ -48,7 +49,7 @@ const ResumeCard = () => {
           <div
             className="py-4 pl-5 pr-3 space-y-2 mb-6 rounded-lg  dark:border-[#212425] dark:border-2"
             style={{
-              background: `${local === "dark" ? "transparent" : item?.bg}`,
+              background: `${local === 'dark' ? 'transparent' : item?.bg}`,
             }}
             key={item.id}
           >
@@ -74,7 +75,7 @@ const ResumeCard = () => {
           <div
             className="py-4 pl-5 pr-3 space-y-2 mb-6 rounded-lg  dark:border-[#212425] dark:border-2"
             style={{
-              background: `${local === "dark" ? "transparent" : item?.bg}`,
+              background: `${local === 'dark' ? 'transparent' : item?.bg}`,
             }}
             key={item.id}
           >
@@ -88,6 +89,6 @@ const ResumeCard = () => {
       </div>
     </>
   );
-};
+}
 
 export default ResumeCard;

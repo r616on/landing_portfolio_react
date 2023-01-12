@@ -1,8 +1,9 @@
-import React from "react";
-import { MdOutlineBusinessCenter, MdOutlineSchool } from "react-icons/md";
-import UseData from "../../Hooks/UseData";
+import React from 'react';
+import { MdOutlineBusinessCenter, MdOutlineSchool } from 'react-icons/md';
 
-const ResumeCardTwo = () => {
+import UseData from '../../Hooks/UseData';
+
+function ResumeCardTwo() {
   const { educationArray, experiencesArray } = UseData();
   const { local } = UseData();
 
@@ -21,7 +22,7 @@ const ResumeCardTwo = () => {
           <div
             className="py-4 pl-5 pr-3 space-y-2 mb-6 rounded-lg  dark:border-[#212425] dark:border-2"
             style={{
-              background: `${local === "dark" ? "transparent" : item?.bg}`,
+              background: `${local === 'dark' ? 'transparent' : item?.bg}`,
             }}
             key={item.id}
           >
@@ -47,7 +48,7 @@ const ResumeCardTwo = () => {
           <div
             className="py-4 pl-5 pr-3 space-y-2 mb-6 rounded-lg  dark:border-[#212425] dark:border-2"
             style={{
-              background: `${local === "dark" ? "transparent" : item?.bg}`,
+              background: `${local === 'dark' ? 'transparent' : item?.bg}`,
             }}
             key={item.id}
           >
@@ -61,6 +62,6 @@ const ResumeCardTwo = () => {
       </div>
     </>
   );
-};
+}
 
 export default ResumeCardTwo;

@@ -1,4 +1,5 @@
 import React from 'react';
+
 import CommonBlog from './CommonBlog';
 
 function BlogTwo() {

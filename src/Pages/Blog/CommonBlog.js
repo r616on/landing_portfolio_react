@@ -1,29 +1,41 @@
-import React from "react";
-import Footer from "../../Share/Footer";
-import UseData from "../../Hooks/UseData";
-import { BsXCircle } from "react-icons/bs";
-import Modal from "react-modal";
-import user from "../../assets/images/about/about.jpg";
+/* eslint-disable react/no-array-index-key */
+/* eslint-disable jsx-a11y/label-has-associated-control */
+/* eslint-disable react/button-has-type */
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+import React from 'react';
+
+import { BsXCircle } from 'react-icons/bs';
+
+import Modal from 'react-modal';
+
 import {
   FaDribbble,
   FaFacebookF,
   FaLinkedinIn,
   FaTwitter,
-} from "react-icons/fa";
-import PageTitle from "../../Share/PageTitle";
+} from 'react-icons/fa';
 
-const CommonBlog = ({ items, count }) => {
+import Footer from '../../Share/Footer';
+import UseData from '../../Hooks/UseData';
+
+import user from '../../assets/images/about/about.jpg';
+
+import PageTitle from '../../Share/PageTitle';
+
+function CommonBlog({ items, count }) {
   const { local } = UseData();
-  const { isOpen, setIsOpen, singleData, handleBlogsData, blogsData } =
-    UseData();
+  const {
+    isOpen, setIsOpen, singleData, handleBlogsData, blogsData,
+  } = UseData();
   const handleModle = (id) => {
     handleBlogsData(id);
   };
 
-  const blogDescriptionSplit = singleData?.description?.split("\n");
+  const blogDescriptionSplit = singleData?.description?.split('\n');
   return (
     <>
-      <PageTitle title="Blog"></PageTitle>
+      <PageTitle title="Blog" />
       {/* End pagetitle */}
 
       <section className="bg-white  lg:rounded-2xl dark:bg-[#111111]">
@@ -37,45 +49,43 @@ const CommonBlog = ({ items, count }) => {
               <div
                 className={`${
                   items
-                    ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-[40px]"
-                    : "grid-cols-1 sm:grid-cols-2 lg:grid-cols-2  mt-[30px]"
+                    ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-[40px]'
+                    : 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-2  mt-[30px]'
                 } grid   gap-x-10 gap-y-7  mb-6`}
               >
                 {/* Blog items start */}
-                {blogsData.slice(0, count).map((item) => {
-                  return (
-                    <div
-                      key={item.id}
-                      style={{
-                        background: `${
-                          local === "dark" ? "transparent" : item?.bg
+                {blogsData.slice(0, count).map((item) => (
+                  <div
+                    key={item.id}
+                    style={{
+                      background: `${
+                          local === 'dark' ? 'transparent' : item?.bg
                         }`,
-                      }}
-                      className="p-5 rounded-lg mb-2 h-full dark:border-[#212425] dark:border-2"
-                    >
-                      <div className="overflow-hidden rounded-lg">
-                        <img
-                          onClick={() => handleModle(item?.id)}
-                          className="rounded-lg w-full cursor-pointer transition duration-200 ease-in-out transform hover:scale-110"
-                          src={item?.imgSmall}
-                          alt="blog"
-                        />
-                      </div>
-                      <div className="flex mt-4 text-tiny text-gray-lite dark:text-[#A6A6A6]">
-                        <span>{item?.date}</span>
-                        <span className="pl-6 relative after:absolute after:h-1 after:w-1 after:bg-gray-lite after:rounded-full after:left-2 after:top-[50%] transform after:-translate-y-1/2">
-                          {item?.category}
-                        </span>
-                      </div>
-                      <h3
-                        onClick={() => setIsOpen(true)}
-                        className="text-lg font-medium dark:text-white duration-300 transition cursor-pointer mt-3 pr-4 hover:text-[#FA5252] dark:hover:text-[#FA5252]"
-                      >
-                        {item?.title}
-                      </h3>
+                    }}
+                    className="p-5 rounded-lg mb-2 h-full dark:border-[#212425] dark:border-2"
+                  >
+                    <div className="overflow-hidden rounded-lg">
+                      <img
+                        onClick={() => handleModle(item?.id)}
+                        className="rounded-lg w-full cursor-pointer transition duration-200 ease-in-out transform hover:scale-110"
+                        src={item?.imgSmall}
+                        alt="blog"
+                      />
                     </div>
-                  );
-                })}
+                    <div className="flex mt-4 text-tiny text-gray-lite dark:text-[#A6A6A6]">
+                      <span>{item?.date}</span>
+                      <span className="pl-6 relative after:absolute after:h-1 after:w-1 after:bg-gray-lite after:rounded-full after:left-2 after:top-[50%] transform after:-translate-y-1/2">
+                        {item?.category}
+                      </span>
+                    </div>
+                    <h3
+                      onClick={() => setIsOpen(true)}
+                      className="text-lg font-medium dark:text-white duration-300 transition cursor-pointer mt-3 pr-4 hover:text-[#FA5252] dark:hover:text-[#FA5252]"
+                    >
+                      {item?.title}
+                    </h3>
+                  </div>
+                ))}
               </div>
             </div>
             {/* Blog items End */}
@@ -89,7 +99,7 @@ const CommonBlog = ({ items, count }) => {
               <div className=" w-full  md:w-10/12 flex items-center   lg:w-[850px] bg-white dark:bg-[#323232] mx-auto rounded-xl p-4 md:p-8 absolute left-1/2 top-1/2 transform -translate-x-[50%] -translate-y-[50%] shadow-lg ">
                 <div
                   className={`${
-                    local === "dark" ? "scrollbarDark" : "scrollbarLight"
+                    local === 'dark' ? 'scrollbarDark' : 'scrollbarLight'
                   } overflow-y-scroll max-h-[80vh] `}
                 >
                   <div className="pr-3 pb-2">
@@ -135,7 +145,7 @@ const CommonBlog = ({ items, count }) => {
                         <div className="flex justify-between items-center">
                           <h3 className="dark:text-white text-[22px] font-medium">
                             Rafia Ana
-                          </h3>{" "}
+                          </h3>{' '}
                           <span className="dark:text-[#dedede] text-tiny ">
                             15 min ago
                           </span>
@@ -214,7 +224,7 @@ const CommonBlog = ({ items, count }) => {
                           <textarea
                             className="block w-full mt-3 p-3 dark:text-white hover:outline-none hover:border-0 focus:outline-none rounded dark:bg-[#0b0b0b5e] bg-gray  "
                             rows="3"
-                          ></textarea>
+                          />
                         </label>
                         <button className="flex items-center  bg-gradient-to-r from-[#FA5252] to-[#DD2476] duration-200 transition ease-linear  hover:bg-gradient-to-l from-[#DD2476]  to-[#fa5252ef] px-8 py-[12px] text-lg text-white rounded-[35px] mt-8">
                           Comment
@@ -231,11 +241,11 @@ const CommonBlog = ({ items, count }) => {
           {/* End .blog */}
 
           {/* Common Footer call here */}
-          <Footer condition={true} bg={"#F8FBFB"} />
+          <Footer condition bg="#F8FBFB" />
         </div>
       </section>
     </>
   );
-};
+}
 
 export default CommonBlog;

@@ -1,15 +1,18 @@
-import React from "react";
-import UseData from "../../Hooks/UseData";
-import Footer from "../../Share/Footer";
-import PageTitle from "../../Share/PageTitle";
-import CommonContact from "./CommonContact";
+/* eslint-disable react/no-array-index-key */
+import React from 'react';
 
-const Contact = () => {
+import UseData from '../../Hooks/UseData';
+import Footer from '../../Share/Footer';
+import PageTitle from '../../Share/PageTitle';
+
+import CommonContact from './CommonContact';
+
+function Contact() {
   const { local, contactArray } = UseData();
 
   return (
     <>
-      <PageTitle title="Contact"></PageTitle>
+      <PageTitle title="Contact" />
       {/* End pagetitle */}
 
       <section className="bg-white lg:rounded-2xl dark:bg-[#111111]">
@@ -28,7 +31,7 @@ const Contact = () => {
                       key={i}
                       style={{
                         background: `${
-                          local === "dark" ? "#212425" : item?.bg
+                          local === 'dark' ? '#212425' : item?.bg
                         }`,
                       }}
                       className="flex flex-wrap dark:bg-transparent p-[30px]  border-[#A6A6A6] gap-2 rounded-xl "
@@ -63,11 +66,11 @@ const Contact = () => {
           {/* End contact */}
 
           {/* Common Footer call here */}
-          <Footer condition={true} bg={"#F8FBFB"} />
+          <Footer condition bg="#F8FBFB" />
         </div>
       </section>
     </>
   );
-};
+}
 
 export default Contact;

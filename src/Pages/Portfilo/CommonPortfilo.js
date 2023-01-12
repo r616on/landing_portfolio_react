@@ -1,16 +1,25 @@
-import React, { useState } from "react";
-import Masonry from "react-masonry-css";
-import Modal from "react-modal";
-import UseData from "../../Hooks/UseData";
-import Footer from "../../Share/Footer";
-import { FiUser, FiCode, FiFilePlus, FiExternalLink } from "react-icons/fi";
-import { BsXCircle } from "react-icons/bs";
-import { useEffect } from "react";
-import PageTitle from "../../Share/PageTitle";
+/* eslint-disable no-shadow */
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+import React, { useState, useEffect } from 'react';
+import Masonry from 'react-masonry-css';
+import Modal from 'react-modal';
 
-Modal.setAppElement("#root");
+import {
+  FiUser, FiCode, FiFilePlus, FiExternalLink,
+} from 'react-icons/fi';
 
-const CommonPortfilo = ({ condition, items }) => {
+import { BsXCircle } from 'react-icons/bs';
+
+import UseData from '../../Hooks/UseData';
+import Footer from '../../Share/Footer';
+
+import PageTitle from '../../Share/PageTitle';
+
+Modal.setAppElement('#root');
+
+function CommonPortfilo({ condition, items }) {
   const {
     local,
     handleData,
@@ -20,14 +29,14 @@ const CommonPortfilo = ({ condition, items }) => {
     setIsOpen,
     singleData,
   } = UseData();
-  const [test, setTest] = useState("All");
+  const [test, setTest] = useState('All');
   const handleSearch = (text) => {
     handleData(text);
     setTest(text);
   };
   useEffect(() => {
-    setTest("All");
-    handleData("All");
+    setTest('All');
+    handleData('All');
   }, []);
   const handleModle = (id) => {
     handleModelData(id);
@@ -43,7 +52,7 @@ const CommonPortfilo = ({ condition, items }) => {
 
   return (
     <>
-      <PageTitle title="Portfolio"></PageTitle>
+      <PageTitle title="Portfolio" />
       {/* End pagetitle */}
 
       <section className="bg-white  lg:rounded-2xl dark:bg-[#111111]">
@@ -58,46 +67,46 @@ const CommonPortfilo = ({ condition, items }) => {
 
               <ul
                 className={`${
-                  item === 2 ? "mt-[30px] " : "mt-[40px]"
+                  item === 2 ? 'mt-[30px] ' : 'mt-[40px]'
                 } flex w-full justify-start md:justify-end  flex-wrap   font-medium`}
               >
                 <li
                   className={`${
-                    test === "All" ? "text-[#FA5252]" : "fillter-btn "
+                    test === 'All' ? 'text-[#FA5252]' : 'fillter-btn '
                   } mr-4 md:mx-4`}
-                  onClick={() => handleSearch("All")}
+                  onClick={() => handleSearch('All')}
                 >
                   All
                 </li>
                 <li
                   className={`${
-                    test === "Video" ? "text-[#FA5252]" : "fillter-btn"
+                    test === 'Video' ? 'text-[#FA5252]' : 'fillter-btn'
                   } mr-4 md:mx-4`}
-                  onClick={() => handleSearch("Video")}
+                  onClick={() => handleSearch('Video')}
                 >
                   Video
                 </li>
                 <li
                   className={`${
-                    test === "Web Design" ? "text-[#FA5252]" : "fillter-btn"
+                    test === 'Web Design' ? 'text-[#FA5252]' : 'fillter-btn'
                   } mr-4 md:mx-4`}
-                  onClick={() => handleSearch("Web Design")}
+                  onClick={() => handleSearch('Web Design')}
                 >
                   Web Design
                 </li>
                 <li
                   className={`${
-                    test === "Logo" ? "text-[#FA5252]" : "fillter-btn ml-0"
+                    test === 'Logo' ? 'text-[#FA5252]' : 'fillter-btn ml-0'
                   } mr-4 md:mx-4`}
-                  onClick={() => handleSearch("Logo")}
+                  onClick={() => handleSearch('Logo')}
                 >
                   Logo
                 </li>
                 <li
                   className={`${
-                    test === "UI/UX" ? "text-[#FA5252]" : "fillter-btn"
+                    test === 'UI/UX' ? 'text-[#FA5252]' : 'fillter-btn'
                   }  `}
-                  onClick={() => handleSearch("UI/UX")}
+                  onClick={() => handleSearch('UI/UX')}
                 >
                   Graphic Design
                 </li>
@@ -117,7 +126,7 @@ const CommonPortfilo = ({ condition, items }) => {
                 <div
                   style={{
                     background: `${
-                      local === "dark" ? "transparent" : item?.bg
+                      local === 'dark' ? 'transparent' : item?.bg
                     }`,
                   }}
                   className="rounded-lg p-6 dark:border-[2px] border-[#212425]"
@@ -167,7 +176,7 @@ const CommonPortfilo = ({ condition, items }) => {
                     <div className="space-y-2">
                       <p className="dark:text-white flex items-center text-[15px]  sm:text-lg ">
                         <FiFilePlus className="sm:text-lg hidden sm:block mr-2  md:text-xl" />
-                        Project :&nbsp;{" "}
+                        Project :&nbsp;{' '}
                         <span className="font-medium "> Website</span>
                       </p>
                       <p className="dark:text-white flex items-center text-[15px]  sm:text-lg ">
@@ -217,12 +226,12 @@ const CommonPortfilo = ({ condition, items }) => {
           </div>
           {/* End Portfolio */}
 
-          {/* Common Footer call here*/}
-          <Footer condition={true} bg={"#F8FBFB"} />
+          {/* Common Footer call here */}
+          <Footer condition bg="#F8FBFB" />
         </div>
       </section>
     </>
   );
-};
+}
 
 export default CommonPortfilo;
