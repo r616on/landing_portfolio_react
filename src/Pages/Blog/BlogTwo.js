@@ -1,8 +1,8 @@
-import React from "react";
-import CommonBlog from "./CommonBlog";
+import React from 'react';
+import CommonBlog from './CommonBlog';
 
-const BlogTwo = () => {
+function BlogTwo() {
   return <CommonBlog items={false} count={4} />;
-};
+}
 
 export default BlogTwo;
